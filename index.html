@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Citizen Assist AI · Energia para estudar</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f5f3eb;color:#173a30;font:17px/1.5 "Segoe UI",Arial,sans-serif}header,main{width:min(1060px,94%);margin:auto}header{padding:18px 0;border-bottom:1px solid #aec2ab;font-weight:700}main{padding:24px 0 45px}h1{font:clamp(32px,5vw,54px)/1.1 Georgia,serif;margin:5px 0 12px}h2{font-size:21px;margin:0 0 14px}p{margin:8px 0 18px}.grid{display:grid;grid-template-columns:290px 1fr;gap:18px}.panel{background:#fffefa;border:1px solid #c6d0c0;border-radius:12px;padding:20px;margin:0 0 16px}label{display:block;margin:10px 0;font-weight:600}input{width:100%;border:1px solid #83968b;border-radius:5px;padding:7px;font:inherit}button{font:inherit;border:1px solid #1d5748;border-radius:6px;color:#19483c;background:#fffefa;padding:7px 12px;margin:3px;cursor:pointer}button:hover,button:focus{background:#e5eee0}.primary{background:#205442;color:white}.primary:hover,.primary:focus{background:#183e32}table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:10px 5px;border-bottom:1px solid #d4dece}th{font-size:14px}.answer{border-left:4px solid #a4be52;padding:8px 14px;background:#f1f5e7;margin-top:10px}a{color:#14533d}small{color:#43564c}details{padding:12px 0}summary{cursor:pointer;font-weight:650}@media(max-width:760px){.grid{grid-template-columns:1fr}.panel{padding:15px}}</style>
+<header>Citizen Assist AI &nbsp; / &nbsp; Energia residencial</header>
+<main><h1>Luz para estudar</h1><p>Compare o custo de iluminar uma mesa com a lâmpada atual, um LED ou a luz da janela combinada com LED.</p><div class="grid">
+<section class="panel"><h2>Sua rotina</h2><form id="rotina">
+<label>Horas de estudo por dia<input id="horas" type="number" min="0" max="24" step="any" value="4" required></label>
+<label>Dias de estudo no mês<input id="dias" type="number" min="1" max="31" value="20" required></label>
+<label>Horas por dia com luz natural suficiente<input id="sol" type="number" min="0" max="24" step="any" value="2" required></label>
+<label>Tarifa variável (R$/kWh)<input id="tarifa" type="number" min="0" step="any" value="1.00" required></label>
+<label>Preço do LED (R$)<input id="preco" type="number" min="0" step="any" value="15" required></label>
+<button class="primary">Calcular comparação</button></form></section>
+<div><section class="panel"><h2>Consumo no mês</h2><div id="res" aria-live="polite"></div><small>Um ponto de luz. Cenário inicial estimado. O custo inclui apenas a energia da iluminação.</small></section>
+<section class="panel"><h2>Consulte o assistente</h2><div id="botoes"></div><div class="answer" id="resposta" aria-live="polite"></div></section>
+<details><summary>Dados, fontes e limites</summary><p>Comparamos lâmpadas de cerca de 800 lúmens. Lúmens medem a luz emitida. A iluminação que chega ao papel depende também da posição da mesa, da luminária e das sombras. Confira a embalagem e teste a leitura no local.</p>
+<p>As horas, o preço e a tarifa iniciais são hipóteses didáticas ajustáveis. A janela já existe. Dias nublados, horários e cortinas alteram o aproveitamento do sol. A simulação não inclui obras, encargos fixos nem créditos por geração.</p>
+<a href="https://www.energy.gov/cmei/femp/purchasing-energy-efficient-light-bulbs">DOE · comparação de potência por fluxo luminoso</a><br><a href="https://www.energy.gov/sites/default/files/2021-08/ES-EE%20Lighting_080921_0.pdf">DOE · guia de iluminação eficiente e natural</a></details></div></div></main>
+<script src="calculo.js"></script><script src="energia.js"></script></html>
